@@ -3,7 +3,7 @@ package com.company;
 public class PersonalData {
     public static final boolean black=false;
     public static final boolean red=true;
-    private RBTNode nil = new RBTNode(-1, "nil");
+    private RBTNode nil = new RBTNode(-1, null);
     private RBTNode root;
     public PersonalData() {
         nil.parent = nil;
@@ -12,8 +12,8 @@ public class PersonalData {
         nil.setColor(black);
         root = nil;
     } // Konstruktor
-    public void insert(int k, String s){
-        insert(new RBTNode( k, s));
+    public void insert(int k, Person person){
+        insert(new RBTNode( k, person));
     }
     private void insert(RBTNode z) {
         RBTNode y = nil;
@@ -148,7 +148,7 @@ public class PersonalData {
             }
         }
     }
-    public String search(int k) {
+    public Person search(int k) {
         RBTNode v = root;
         while (v != nil && k != v.getKey()) {
             if(k < v.getKey()) {
@@ -157,7 +157,7 @@ public class PersonalData {
                 v = v.getRight();
             }
         }
-        return v.getVal();
+        return v.getPerson();
     }
     private RBTNode search_E(int k) {
         RBTNode v = root;
