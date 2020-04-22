@@ -13,6 +13,16 @@ public class Person {
         this.gender = gender;
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "Surname='" + surname + '\'' +
+                ", Name='" + name + '\'' +
+                ", Age=" + age +
+                ", Gender='" + gender + '\'' +
+                '}';
+    }
+
     public String getSurname() {
         return surname;
     }
