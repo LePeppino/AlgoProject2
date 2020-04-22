@@ -218,7 +218,7 @@ public class PersonalData {
     }
 
     //Every path has same amount of black nodes
-    private int checkFuenf(RBTNode nodeL) {
+    private int checkFive(RBTNode nodeL) {
         RBTNode nodeR = nodeL;
         int blackCounterL = 0;
         int blackCounterR = 0;
@@ -241,7 +241,7 @@ public class PersonalData {
         if(node != nil) {
             return true;
         }
-        int check = checkFuenf(node);
+        int check = checkFive(node);
 
         return check == 0 && rule5(node.left) && rule5(node.right);
     }
