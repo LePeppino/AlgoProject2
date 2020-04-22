@@ -16,7 +16,7 @@ public class PersonalDataManagement {
         var input = new Scanner(System.in);
         Scanner reader = null;
 
-        System.out.println("Personaldata Management System 1.0 \n Specify absolute path to the data file:");
+        System.out.println("Personal Data Management System 1.0 \n Specify absolute path to the data file:");
 
         String path = input.nextLine();
         input.close();
@@ -34,12 +34,14 @@ public class PersonalDataManagement {
             surname = reader.next();
             name= reader.next();
             age = reader.nextInt();
-            gender = reader.next();
+            reader.skip(", ");
+            gender = reader.nextLine();
             rbt.insert(counter, new Person(surname, name, age, gender));
             counter++;
         }
         reader.close();
-
+        System.out.println(rbt.CheckRB());
+        System.out.println(rbt.height());
 
     }
 

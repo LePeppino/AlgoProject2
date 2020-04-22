@@ -11,7 +11,7 @@ public class PersonalData {
         nil.right = nil;
         nil.setColor(black);
         root = nil;
-    } // Konstruktor
+    } // Constructor
     public void insert(int k, Person person){
         insert(new RBTNode( k, person));
     }
@@ -85,7 +85,7 @@ public class PersonalData {
             }
         }
         root.color = black;
-        // Line 44-87: http://www.codebytes.in/2014/10/red-black-tree-java-implementation.html 17.11.2019 - 10:21
+        // Line 44-87: http://www.codebytes.in/2014/10/red-black-tree-java-implementation.html 14.04.2020 - 10:21
     }
     private void  leftRotate(RBTNode x) {
         if(x.right == nil) {
