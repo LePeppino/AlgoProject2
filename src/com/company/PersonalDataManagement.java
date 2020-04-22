@@ -20,19 +20,21 @@ public class PersonalDataManagement {
         String path = input.nextLine();
 
         try {
-            reader = new Scanner(new File(path));
+            reader = new Scanner(new File(path)).useDelimiter(",");
         } catch (FileNotFoundException e) {
             System.out.println("Error: file not found");
             e.printStackTrace();
         }
 
         while(reader.hasNext()){
+            int i = 0;
             surname = reader.next();
             name= reader.next();
             age = reader.nextInt();
             gender = reader.next();
-            RBTNode node = new RBTNode(k, s)
+            rbt.insert(i, new Person(surname, name, age, gender));
         }
+        reader.close();
 
 
     }
