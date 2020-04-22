@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class PersonalDataManagement {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         var rbt = new PersonalData();
         String surname;
         String name;
-        int age;
+        Integer age;
         String gender;
         Scanner input = new Scanner(System.in);
         Scanner reader = null;
@@ -20,11 +20,13 @@ public class PersonalDataManagement {
         String path = input.nextLine();
 
         try {
-            reader = new Scanner(new File(path)).useDelimiter(",");
+            reader = new Scanner(new File(path)).useDelimiter("\\s*,\\s*");
         } catch (FileNotFoundException e) {
             System.out.println("Error: file not found");
             e.printStackTrace();
         }
+
+        assert reader != null;
 
         while(reader.hasNext()){
             int i = 0;
