@@ -13,13 +13,9 @@ public class RBTNode {
     private int age;
 
 
-    public RBTNode(int k, String s, String name, String surname, String gender, int age) {
+    public RBTNode(int k, String s) {
         setKey(k);
         setVal(s);
-        setName(name);
-        setSurname(surname);
-        setGender(gender);
-        setAge(age);
         setColor(red);
         setLeft(null);
         setRight(null);
