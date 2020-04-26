@@ -160,7 +160,6 @@ public class PersonalData {
         }
     }
 
-
     public RBTNode search(int k) {
         RBTNode v = root;
         while (v != nil && k != v.getKey()) {

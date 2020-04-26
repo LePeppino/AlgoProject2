@@ -41,8 +41,8 @@ public class PersonalDataManagement {
         }
         reader.close();
 
-        System.out.println("Select operation: \n (d)elete, (i)nsert, (s)earch, (n)umber, (v)average, (l)isting, (e)nd");
         while(!caseInput.equals("e")){
+            System.out.println("Select operation: \n (d)elete, (i)nsert, (s)earch, (n)umber, (v)average, (l)isting, (e)nd");
             caseInput = input.next();
             switch (caseInput){
                 case "d":
@@ -63,23 +63,27 @@ public class PersonalDataManagement {
                     break;
                 case "s":
                     System.out.println("Enter key (int) of node to search: ");
-                    rbt.search(input.nextInt()).toString();
+                    System.out.println(rbt.search(input.nextInt()).getPerson().toString());
                     break;
                 case "n":
                     System.out.println("Number of people: " + rbt.getNumberOfElements());
                     break;
                 case "v":
                     int average = 0;
-                    for(int i = 0; i <= rbt.getNumberOfElements(); i++){
+                    for(int i = 0; i < rbt.getNumberOfElements(); i++){
                         System.out.println(rbt.get(i).getAge());
                         average += rbt.get(i).getAge();
                     }
                     System.out.println("Average age of people: " + average/rbt.getNumberOfElements());
                     break;
                 case "l":
-                    for(int i = 0; i <= rbt.getNumberOfElements(); i++){
+                    for(int i = 0; i < rbt.getNumberOfElements(); i++){
                         System.out.println(rbt.get(i).toString());
                     }
+                    break;
+                default:
+                    System.out.println("Not a valid option");
+                    break;
             }
         }
 
