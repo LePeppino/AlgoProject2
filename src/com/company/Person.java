@@ -5,9 +5,9 @@ public class Person {
     private String name;
     private int age;
     private String gender;
-    private int id;
+    private Integer id;
 
-    public Person(String surname, String name, int age, String gender) {
+    public Person(String surname, String name, int age, String gender, Integer id) {
         this.surname = surname;
         this.name = name;
         this.age = age;
@@ -18,20 +18,12 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "Surname='" + surname + '\'' +
-                ",First name='" + name + '\'' +
-                ", Age=" + age +
-                ", Gender='" + gender + '\'' +
-                ", Id=" + id +
+                "surname='" + surname + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                ", id=" + id +
                 '}';
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getSurname() {

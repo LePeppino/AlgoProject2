@@ -3,7 +3,7 @@ package com.company;
 public class RBTNode {
     public static final boolean black = false;
     public static final boolean red = true;
-    public int key;
+    public Integer key;
     public Boolean color;
     public RBTNode left, right, parent;
     public Person person;
@@ -86,4 +86,3 @@ public class RBTNode {
         return red;
     }
 }
-

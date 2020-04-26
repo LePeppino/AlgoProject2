@@ -36,7 +36,7 @@ public class PersonalDataManagement {
             age = reader.nextInt();
             reader.skip(", ");
             gender = reader.nextLine();
-            rbt.insert(counter, new Person(surname, name, age, gender));
+            rbt.insert(counter, new Person(surname, name, age, gender, counter));
             counter++;
         }
         reader.close();
@@ -58,7 +58,8 @@ public class PersonalDataManagement {
                     age = input.nextInt();
                     System.out.println("Enter gender:");
                     gender = input.next();
-                    rbt.insert(counter, new Person(surname, name, age, gender));
+                    rbt.insert(counter, new Person(surname, name, age, gender, counter));
+                    counter++;
                     break;
                 case "s":
                     System.out.println("Enter key (int) of node to search: ");
@@ -70,9 +71,15 @@ public class PersonalDataManagement {
                 case "v":
                     int average = 0;
                     for(int i = 0; i <= rbt.getNumberOfElements(); i++){
+                        System.out.println(rbt.get(i).getAge());
                         average += rbt.get(i).getAge();
                     }
                     System.out.println("Average age of people: " + average/rbt.getNumberOfElements());
+                    break;
+                case "l":
+                    for(int i = 0; i <= rbt.getNumberOfElements(); i++){
+                        System.out.println(rbt.get(i).toString());
+                    }
             }
         }
 
